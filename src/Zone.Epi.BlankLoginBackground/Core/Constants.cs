@@ -6,6 +6,6 @@
 
         public const string LocalImageLocation = "/Static/Images/CMS/";
 
-        public const string RemoteImageUrl = "https://raw.githubusercontent.com/zone/Zone.Epi.BlankLoginBackground/master/Static/Images/CMS/login-background.jpg";
+        public const string RemoteImageUrl = "https://raw.githubusercontent.com/zone/Zone.Epi.BlankLoginBackground/master/src/Zone.Epi.BlankLoginBackground/Static/Images/CMS/login-background.jpg";
     }
 }

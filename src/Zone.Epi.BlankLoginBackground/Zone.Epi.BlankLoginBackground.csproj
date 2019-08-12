@@ -14,7 +14,7 @@
         <Copyright>Copyright $(CurrentYear)</Copyright>
         <PackageDescription>Change the Episerver CMS login screen background to a basic blank background.</PackageDescription>
         <!--Follow semantic versioning may include prerelease information too-->
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <!--Leave release notes blank to read in from releasenotes.txt-->
         <PackageReleaseNotes></PackageReleaseNotes>
         <PackageTags>Zone EPiServerAddOn Episerver Login</PackageTags>
