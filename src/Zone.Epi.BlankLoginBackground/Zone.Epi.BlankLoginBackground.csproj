@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\targets\AddReleaseNotes.targets" />
+    <Import Project="..\targets\AddReadmeMarkdown.targets" />
+    <Import Project="..\targets\ZipEpiserverModule.targets" />
+    <Import Project="..\targets\CommonBuild.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>net461</TargetFrameworks>
+        <PackageId>Zone.Epi.BlankLoginBackground</PackageId>
+        <Authors>Jacob Pretorius</Authors>
+        <owners>Zone</owners>
+        <Company>Zone</Company>
+        <Copyright>Copyright $(CurrentYear)</Copyright>
+        <PackageDescription>Change the Episerver CMS login screen background to a basic blank background.</PackageDescription>
+        <!--Follow semantic versioning may include prerelease information too-->
+        <PackageVersion>1.0.0</PackageVersion>
+        <!--Leave release notes blank to read in from releasenotes.txt-->
+        <PackageReleaseNotes></PackageReleaseNotes>
+        <PackageTags>Zone EPiServerAddOn Episerver Login</PackageTags>
+        <!--Set urls as needed-->
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <License>https://raw.githubusercontent.com/zone/Zone.Epi.BlankLoginBackground/master/license.txt</License>
+        <PackageProjectUrl>https://github.com/zone/Zone.Epi.BlankLoginBackground</PackageProjectUrl>
+        <PackageIconUrl>https://raw.githubusercontent.com/zone/Zone.Epi.BlankLoginBackground/master/img/Zone.jpg</PackageIconUrl>
+
+        <!--Adds readme.md as readme.txt in package-->
+        <IncludeReadMeMarkdown>false</IncludeReadMeMarkdown>
+
+        <!--Provide intellisense for developers-->
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+
+        <!--Useful to allow others to debug -->
+        <IncludeSymbols>true</IncludeSymbols>
+        <IncludeSource>true</IncludeSource>
+
+        <!--Set assembly info version from CI prop if possible-->
+        <BuildInfo Condition="'$(CIBuildNumber)' != ''"> Commit: $(RepositoryCommit) Branch: $(RepositoryBranch) Build: $(CIBuildNumber)</BuildInfo>
+        <InformationalVersion>$(PackageVersion) $(BuildInfo)</InformationalVersion>
+
+        <!--Do not change unless you want to deal with assembly redirects-->
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove=".template.config\**" />
+        <EmbeddedResource Remove=".template.config\**" />
+        <None Remove=".template.config\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="EPiServer.CMS.Core" Version="[11.3.0, 12.0)" />
+        <PackageReference Include="EPiServer.CMS.UI" Version="[11.2.5, 12.0)" />
+        <PackageReference Include="EPiServer.CMS.UI.Core" Version="[11.2.5, 12.0)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="System.Web.ApplicationServices" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="Static/**/*.*" copyToOutput="true">
+            <IncludeInPackage>true</IncludeInPackage>
+            <CopyToOutput>true</CopyToOutput>
+            <BuildAction>Content</BuildAction>
+            <copyToOutput>true</copyToOutput>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+</Project>
