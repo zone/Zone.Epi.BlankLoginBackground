@@ -1,7 +1,7 @@
 # Zone.Epi.BlankLoginBackground
 Change the Episerver CMS login screen background to a basic blank background.
 
-![Demo-Image](https://raw.githubusercontent.com/zone/Zone.Epi.ABTestListGadget/master/img/Login_Usage.PNG)
+![Demo-Image](https://raw.githubusercontent.com/zone/Zone.Epi.BlankLoginBackground/master/img/Login_Usage.PNG)
 
 ## Installation
 You can install the package using NuGet with `Install-Package Zone.Epi.BlankLoginBackground`. For release info check the [Episerver feed package details](https://nuget.episerver.com/package/?id=Zone.Epi.BlankLoginBackground).
