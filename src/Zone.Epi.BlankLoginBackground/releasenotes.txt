@@ -1,2 +1,3 @@
-﻿v1 - Initial release
-1.0.1 - Update remote image URL to Github raw link
+﻿v1 - Initial release.
+1.0.1 - Update remote image URL to Github raw link.
+1.0.2 - Increase backwards compatibility with previous Episerver CMS versions.
